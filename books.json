@@ -1,0 +1,23 @@
+[
+    {
+      "title": "The Silent Sea",
+      "author": "Sarah Smith",
+      "price": "$19.99",
+      "genre": "Science Fiction",
+      "sku": "BOOK-002",
+      "stock": "In Stock",
+      "description": "A thrilling journey through uncharted territories, where courage meets mystery.",
+      "image": "img/thesilentsea.jpg"
+    },
+    {
+      "title": "The Forgotten Tale",
+      "author": "John Doe",
+      "price": "$15.99",
+      "genre": "Fantasy",
+      "sku": "BOOK-003",
+      "stock": "Out of Stock",
+      "description": "A magical adventure filled with secrets and legendary creatures.",
+      "image": "img/theforgottentale.jpg"
+    }
+  ]
+  
