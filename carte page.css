@@ -18,20 +18,14 @@ body {
     height: 100%;
 }
 
-.header {
-    background: #000000d8;
-    color: white;
-    padding: 15px;
-    font-size: 15px;
-    font-weight: bold;
-    text-align: center;
-}
 .navbar {
     display: flex;
     align-items: center;
     background: transparent;
     padding: 10px 20px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
 }
 .logo img {
     height: 50px;
@@ -41,13 +35,14 @@ body {
     list-style: none;
     margin-left: 20px;
     padding: 0;
+    
 }
 .navbar ul li {
     margin: 0 15px;
 }
 .navbar ul li a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 18px;
     font-weight: bold;
     padding: 8px 15px;

@@ -3,61 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookshelf - Bookstore & Exchange Platform</title>
+    <title>Bookshelf - FAQ</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="FAQ.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-    <header class="header">
-        FREE SHIPPING FOR ORDERS OVER $50
-    </header>
-    
     <nav class="navbar">
-        <a href="#" class="logo">
-            <img src="img/logo.png" alt="Bookshelf Logo">
-        </a>
-        <ul>
-            <li><a href="main.html">Home</a></li>
-            <li><a href="#">Pages</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Shop</a></li>
-        </ul>
-        <div class="nav-icons">
-            <a href="#"><img src="img/cart-icon.png" alt="Cart"></a>
-            <a href="#"><img src="img/more.png" alt="Menu"></a>
-        </div>
     </nav>
 
     <div class="background-image">
-        <img src="img/faq.jpg" alt="Bookshelf background">
-        <h1 class="faq-title">FAQ</h1>
+        <img src="img/faq.jpg" alt="Bookshelf background with books">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
     </div>
 
-    <div class="content-section">
-        <h2>Your Premier Book Destination</h2>
-        <p>At Bookshelf, we combine traditional book selling with modern exchange opportunities.</p>
-        
-        <div class="book">
-            <div class="page page-1">
-                <div class="feature-card">
-                    <h3>📚 Bookstore</h3>
-                    <p>Explore thousands of books across all genres! Whether you love fiction, non-fiction, science, or romance, we have something for everyone. Enjoy curated collections, limited edition prints, and exclusive author events.</p>
-                </div>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>How does the book exchange work?</h3>
+                <i class="fas fa-chevron-down"></i>
             </div>
-            <div class="page page-2">
-                <div class="feature-card">
-                    <h3>🔄 Exchange Platform</h3>
-                    <p>Trade your gently-used books with other book lovers! Earn credits and discover new stories by swapping books with members of our vibrant community. It’s a sustainable and cost-effective way to share your passion for reading.</p>
-                </div>
+            <div class="faq-answer">
+                <p>Our exchange platform allows you to trade gently-used books with other members. List your books, receive exchange credits, and use those credits to request books from other users. Each credit equals one book exchange.</p>
             </div>
-            <div class="page page-3">
-                <div class="feature-card">
-                    <h3>📅 Events</h3>
-                    <p>Join our exciting author meetups, book signings, workshops, and book club gatherings. Connect with fellow readers and authors, and dive deep into new literary worlds!</p>
-                </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>What payment methods do you accept?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We accept all major credit cards, PayPal, and Apple Pay. For physical store purchases, we also accept cash and contactless payments.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>Can I return a purchased book?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes! Unread books in original condition can be returned within 30 days of purchase. Please keep your receipt for hassle-free returns.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>How do I participate in author events?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Check our Events page for upcoming author meetups. Most events are free for members, but some may require registration due to limited seating.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>What condition should exchange books be in?</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Books should be in good condition with no missing pages or significant damage. We reserve the right to reject books that don't meet our quality standards.</p>
             </div>
         </div>
     </div>
@@ -89,7 +96,6 @@
                         <li><a href="#">Books</a></li>
                         <li><a href="#">Ebooks</a></li>
                         <li><a href="#">Magazines</a></li>
-                        <li><a href="#">Newspapers</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -104,6 +110,29 @@
             </div>
         </div>
         <p>© 2025 BOOKSHELF, ALL RIGHTS RESERVED</p>
-    </footer>    
+    </footer>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.footer-col, .faq-item');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); 
+    </script>
 </body>
 </html>

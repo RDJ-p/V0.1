@@ -20,8 +20,13 @@ body {
     padding: 20px;
     min-height: 100vh;
     text-align: center;
+    background-image: url(img/error404.png);
+    position: relative;
 }
-
+.er404{
+    position: absolute;
+    top: 10%;
+}
 .img {
     width: 60%;
     max-width: 400px;

@@ -4,289 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload & Exchange | My Bookstore</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="Exchangecss.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Cormorant', serif;
-}
-
-body {
-    background: url('img/backgroundmain.jpg') no-repeat center center/cover fixed;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-size: cover;
-}
-
-.container1 {
-    background: #f5d6b85b;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
-    margin: 30px auto;
-    flex-grow: 1;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-}
-
-input, textarea, select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-
-.navbar {
-    flex-wrap: wrap;
-    padding: 10px;
-    display: flex;
-    background-color: transparent;
-    align-items: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
-    justify-content: space-between;
-}
-
-.logo img {
-    height: clamp(40px, 8vw, 50px);
-}
-
-.navbar ul {
-    flex: 1;
-    margin: 10px 0;
-    display: flex;
-    list-style: none;
-    margin-left: 20px;
-    padding: 0;
-}
-
-.navbar ul li {
-    margin: 0 15px;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 8px 15px;
-    transition: 0.3s;
-}
-
-.navbar ul li a:hover {
-    color: #ff5733;
-}
-.nav-icons img {
-    width: 25px;
-    height: auto;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 0 10px;
-}
-
-
-.nav-icons img:hover {
-    opacity: 0.7;
-}
-
-@media (max-width: 1024px) {
-    .navbar ul {
-        margin-left: 0;
-    }
-
-    .navbar ul li {
-        margin: 0 10px;
-    }
-
-    .nav-icons {
-        justify-content: center;
-        margin-left: 0;
-    }
-
-    .container1 {
-        max-width: 80%;
-    }
-
-    h2 {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .navbar ul {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-        padding: 10px 0;
-    }
-    
-    .navbar ul li {
-        margin: 10px 0;
-    }
-
-    .nav-icons {
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .container1 {
-        width: 90%;
-        max-width: 100%;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 574px) {
-    .navbar ul li a {
-        font-size: 16px;
-        padding: 8px 10px;
-    }
-
-    .nav-icons img {
-        width: 20px;
-    }
-
-    .footer-col {
-        width: 100%;
-        text-align: center;
-    }
-
-    .footer-col h4 {
-        font-size: 16px;
-    }
-
-    .footer-col ul li a {
-        font-size: 14px;
-    }
-
-    .footer-col .social-links a {
-        margin: 5px;
-    }
-
-    .container1 {
-        max-width: 100%;
-        padding: 15px;
-    }
-}
-
-.footer {
-    background: #000000d8;
-    color: white;
-    text-align: center;
-    padding: 30px 0;
-    margin-top: auto;
-}
-
-.container {
-    max-width: 1170px;
-    margin: auto;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.footer-col {
-    width: 25%;
-    padding: 0 15px;
-    flex: 1 1 200px;
-    min-width: 250px;
-    padding: 15px;
-}
-
-.footer-col h4 {
-    font-size: 18px;
-    color: #ffffff;
-    text-transform: capitalize;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.footer-col h4::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    background-color: #ffffff;
-    height: 2px;
-    width: 50px;
-}
-
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-    font-size: 16px;
-    color: #bbbbbb;
-    text-decoration: none;
-    display: block;
-    transition: all 0.3s ease;
-}
-
-.footer-col ul li a:hover {
-    color: #ffffff;
-    padding-left: 8px;
-}
-
-.footer-col .social-links a {
-    display: inline-block;
-    margin: 0 10px 10px 0;
-}
-@media (max-width: 767px) {
-    .footer-col {
-        width: 50%;
-        margin-bottom: 30px;
-    }
-}
-@media (max-width: 574px) {
-    .footer-col {
-        width: 100%;
-    }
-}
-    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -306,36 +25,51 @@ button:hover {
             <a href="#"><img src="img/more.png" alt="Menu"></a>
         </div>
     </nav>
+
     <div class="container1">
-        <h2>Upload or Exchange a Book/Document</h2>
+        <h2>📚 Upload or Exchange Books/Documents</h2>
         <form action="/exchange" method="POST" enctype="multipart/form-data">
-            <label for="upload-title">Title:</label>
-            <input type="text" id="upload-title" name="upload_title" required>
-            
-            <label for="upload-type">Type:</label>
-            <select id="upload-type" name="upload_type">
-                <option value="book">Book</option>
-                <option value="document">Document</option>
-            </select>
-            
-            <label for="file-upload">Upload File:</label>
-            <input type="file" id="file-upload" name="file_upload" required>
-            
-            <label for="exchange-option">Exchange for another item?</label>
-            <select id="exchange-option" name="exchange_option">
-                <option value="no">No</option>
-                <option value="yes">Yes</option>
-            </select>
-            
-            <div id="exchange-details" style="display:none;">
-                <label for="exchange-title">Preferred Exchange Title:</label>
-                <input type="text" id="exchange-title" name="exchange_title">
-                
-                <label for="exchange-reason">Exchange Reason:</label>
-                <textarea id="exchange-reason" name="exchange_reason"></textarea>
+            <div class="form-group" style="animation-delay: 0.2s">
+                <label for="upload-title">Book Title</label>
+                <input type="text" id="upload-title" name="upload_title" required>
             </div>
-            
-            <button type="submit">Submit Request</button>
+
+            <div class="form-group" style="animation-delay: 0.3s">
+                <label for="upload-type">Document Type</label>
+                <select id="upload-type" name="upload_type">
+                    <option value="book">Book</option>
+                    <option value="document">Document</option>
+                </select>
+            </div>
+
+            <div class="form-group" style="animation-delay: 0.4s">
+                <div class="file-input-wrapper">
+                    <span id="file-label">📁 Click to upload file (PDF/DOC)</span>
+                    <input type="file" id="file-upload" name="file_upload" required accept=".pdf,.doc,.docx">
+                </div>
+            </div>
+
+            <div class="form-group" style="animation-delay: 0.5s">
+                <label for="exchange-option">Exchange Request</label>
+                <select id="exchange-option" name="exchange_option">
+                    <option value="no">No Exchange</option>
+                    <option value="yes">Request Exchange</option>
+                </select>
+            </div>
+
+            <div id="exchange-details">
+                <div class="form-group" style="animation-delay: 0.6s">
+                    <label for="exchange-title">Desired Title</label>
+                    <input type="text" id="exchange-title" name="exchange_title">
+                </div>
+
+                <div class="form-group" style="animation-delay: 0.7s">
+                    <label for="exchange-reason">Exchange Reason</label>
+                    <textarea id="exchange-reason" name="exchange_reason" rows="3"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" style="animation-delay: 0.8s">Submit Request →</button>
         </form>
     </div>
     <footer class="footer">
@@ -366,7 +100,6 @@ button:hover {
                         <li><a href="#">Books</a></li>
                         <li><a href="#">Ebooks</a></li>
                         <li><a href="#">Magazines</a></li>
-                        <li><a href="#">Newspapers</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -382,15 +115,29 @@ button:hover {
         </div>
         <p>© 2025 BOOKSHELF, ALL RIGHTS RESERVED</p>
     </footer>
+
     <script>
-            function toggleMenu() {
+        document.querySelectorAll('.form-group').forEach((el, index) => {
+            el.style.animationDelay = `${0.2 + (index * 0.1)}s`;
+        });
+
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            const fileName = e.target.files[0]?.name || '📁 Click to upload file (PDF/DOC)';
+            document.getElementById('file-label').textContent = fileName;
+        });
+
+        document.getElementById('exchange-option').addEventListener('change', function() {
+            const details = document.getElementById('exchange-details');
+            this.value === 'yes' ? 
+                details.classList.add('active') :
+                details.classList.remove('active');
+        });
+
+        function toggleMenu() {
             const nav = document.querySelector('.navbar ul');
             nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
         }
-            document.getElementById('exchange-option').addEventListener('change', function() {
-            document.getElementById('exchange-details').style.display = 
-                this.value === 'yes' ? 'block' : 'none';
-        });
+
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
                 document.querySelector('.navbar ul').style.display = 'flex';
@@ -398,7 +145,6 @@ button:hover {
                 document.querySelector('.navbar ul').style.display = 'none';
             }
         });
-    </script>
     </script>
 </body>
 </html>

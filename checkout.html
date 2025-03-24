@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Register | Bookshelf</title>
+    <link rel="stylesheet" href="checkout.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="carte page.css">
-    <title>Document</title>
 </head>
 <body>
     <nav class="navbar">
@@ -14,23 +13,51 @@
             <img src="img/logo.png" alt="Logo">
         </a>
         <ul>
-            <li><a href="main.html">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a href="#">Pages</a></li>
             <li><a href="#">Events</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Shop</a></li>
         </ul>
         <div class="nav-icons">
-            <a href="#"><img src="img/cart-icon.png" alt="Cart"></a>
-            <a href="#"><img src="img/search.png" alt="Search"></a>
+            <a href="carte page.html"><img src="img/cart-icon.png" alt="Cart"></a>
             <a href="#"><img src="img/more.png" alt="Menu"></a>
         </div>
     </nav>
-    <div class="about-section">Cart</div>
-    <div class="container1">
-        <p class="message">Your basket is currently empty.</p>
-        <button class="return-button" onclick="window.location.href='product.html'">RETURN TO SHOP</button>
-    </div>
+
+    <section class="login-section">
+        <div class="login-container">
+            <h2>CHECKOUT</h2>
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="email">FULL Name</label>
+                    <input type="email" id="Full name" name="Full name"  required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Phone Number</label>
+                    <input type="email" id="Phone number" name="Phone Number"  required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">Adress</label>
+                    <input type="email" id="adress" name="Adress"  required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Country</label>
+                    <input type="password" id="country" name="Country"  required>
+                </div>
+
+               
+
+                <div class="form-action">
+                    <button type="submit" class="btn-submit">CHECKOUT</button>
+                </div>
+                
+                
+            </form>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -74,55 +101,29 @@
             </div>
         </div>
         <p>© 2025 BOOKSHELF, ALL RIGHTS RESERVED</p>
-    </footer>    
+    </footer>
     <script>
-        function loadCart() {
-            fetch('/api/cart')
-                .then(response => response.json())
-                .then(cart => {
-                    const cartElement = document.querySelector('.cart-items');
-                    const messageElement = document.querySelector('.message');
-                    
-                    if (cart.length > 0) {
-                        messageElement.textContent = 'Your cart has ' + cart.length + ' item(s).';
-                        cartElement.innerHTML = '';
-                        cart.forEach(item => {
-                            const cartItemElement = document.createElement('div');
-                            cartItemElement.classList.add('cart-item');
-                            cartItemElement.innerHTML = `
-                                <span>${item.productName}</span>
-                                <span>$${item.price}</span>
-                                <span>Quantity: ${item.quantity}</span>
-                            `;
-                            cartElement.appendChild(cartItemElement);
-                        });
-                    } else {
-                        messageElement.textContent = 'Your basket is currently empty.';
-                    }
-                })
-                .catch(error => console.error('Error loading cart:', error));
+        function validateLoginForm(event) {
+            event.preventDefault();
+    
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+    
+            if (username === "" || password === "") {
+                alert("Both fields are required.");
+                return false; 
+            }
+                if (username.length < 3) {
+                alert("Username should be at least 3 characters long.");
+                return false;
+            }
+    
+            if (password.length < 6) {
+                alert("Password should be at least 6 characters long.");
+                return false;
+            }
+            document.getElementById("loginForm").submit();  
         }
-
-        function addToCart(productId, quantity) {
-            fetch('/api/cart', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    productId: productId,
-                    quantity: quantity
-                }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data); 
-                alert(data.message);
-                loadCart(); 
-            })
-            .catch(error => console.error('Error adding item to cart:', error));
-        }
-        window.onload = loadCart;
     </script>    
 </body>
 </html>
